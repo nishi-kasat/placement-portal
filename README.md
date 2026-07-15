@@ -1,4 +1,4 @@
-# Placement Portal
+# Placement Portal Application
 
 A web-based Placement Portal developed to simplify the campus recruitment process for students, companies, and placement administrators. The application provides separate dashboards for each user role and supports managing placement drives, applications, and student records from a single platform.
 
