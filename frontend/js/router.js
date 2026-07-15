@@ -12,11 +12,11 @@ window.routes = [
   { path: '/admin/students', component: window.AdminStudentsPage, meta: { role: 'administrator' } },
   { path: '/admin/applications', component: window.AdminApplicationsPage, meta: { role: 'administrator' } },
 
-//   { path: '/company', component: window.CompanyDashboardPage, meta: { role: 'company' } },
-//   { path: '/company/create-drive', component: window.CompanyCreateDrivePage, meta: { role: 'company' } },
-//   { path: '/company/drives', component: window.CompanyDrivesPage, meta: { role: 'company' } },
-//   { path: '/company/applications', component: window.CompanyApplicationsPage, meta: { role: 'company' } },
-// 
+  { path: '/company', component: window.CompanyDashboardPage, meta: { role: 'company' } },
+  { path: '/company/create-drive', component: window.CompanyCreateDrivePage, meta: { role: 'company' } },
+  { path: '/company/drives', component: window.CompanyDrivesPage, meta: { role: 'company' } },
+  { path: '/company/applications', component: window.CompanyApplicationsPage, meta: { role: 'company' } },
+
 //   { path: '/student', component: window.StudentDashboardPage, meta: { role: 'student' } },
 //   { path: '/student/profile', component: window.StudentProfilePage, meta: { role: 'student' } },
 //   { path: '/student/drives', component: window.StudentDrivesPage, meta: { role: 'student' } },
