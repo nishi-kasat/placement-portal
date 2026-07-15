@@ -5,13 +5,13 @@ window.routes = [
   { path: '/register/student', component: window.StudentRegisterPage },
   { path: '/register/company', component: window.CompanyRegisterPage },
 
-//   { path: '/admin', component: window.AdminDashboardPage, meta: { role: 'administrator' } },
-//   { path: '/admin/companies', component: window.AdminCompaniesPage, meta: { role: 'administrator' } },
-//   { path: '/admin/drives', component: window.AdminDrivesPage, meta: { role: 'administrator' } },
-//   { path: '/admin/search', component: window.AdminSearchPage, meta: { role: 'administrator' } },
-//   { path: '/admin/students', component: window.AdminStudentsPage, meta: { role: 'administrator' } },
-//   { path: '/admin/applications', component: window.AdminApplicationsPage, meta: { role: 'administrator' } },
-// 
+  { path: '/admin', component: window.AdminDashboardPage, meta: { role: 'administrator' } },
+  { path: '/admin/companies', component: window.AdminCompaniesPage, meta: { role: 'administrator' } },
+  { path: '/admin/drives', component: window.AdminDrivesPage, meta: { role: 'administrator' } },
+  { path: '/admin/search', component: window.AdminSearchPage, meta: { role: 'administrator' } },
+  { path: '/admin/students', component: window.AdminStudentsPage, meta: { role: 'administrator' } },
+  { path: '/admin/applications', component: window.AdminApplicationsPage, meta: { role: 'administrator' } },
+
 //   { path: '/company', component: window.CompanyDashboardPage, meta: { role: 'company' } },
 //   { path: '/company/create-drive', component: window.CompanyCreateDrivePage, meta: { role: 'company' } },
 //   { path: '/company/drives', component: window.CompanyDrivesPage, meta: { role: 'company' } },
