@@ -40,7 +40,6 @@ This project was developed using Flask for the backend, Vue.js for the frontend,
 - Flask
 - Flask Session
 - SQLite
-- SQLAlchemy
 - Redis
 - Celery
 
@@ -62,28 +61,28 @@ This project was developed using Flask for the backend, Vue.js for the frontend,
 ## Project Structure
 
 ```
-placement-portal/
-│
+ppa/
 ├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── tasks/
-│   ├── app.py
-│   ├── celery_config.py
-│   ├── database_config.py
-│   └── redis_cache.py
-│
+│   ├── routes/              # Flask API blueprints (auth, user, student, company, admin)
+│   ├── tasks/               # Celery async and periodic tasks (Reminders, Reports, CSVs)
+│   ├── app.py               # Main Flask application entry point
+│   ├── celery_config.py     # Celery and Beat configuration
+│   ├── database_config.py   # DB schemas & database initialization script
+│   └── redis_cache.py       # Caching functions and helpers
 ├── frontend/
-│   ├── components/
-│   ├── pages/
-│   ├── services/
-│   ├── router.js
-│   └── app.js
-│
-├── static/
-├── templates/
-├── requirements.txt
-└── README.md
+│   ├── css/
+│   │   └── styles.css       # Unified custom dark glassmorphic stylesheet
+│   ├── js/
+│   │   ├── layout/          # Vue layout components (AppLayout.js)
+│   │   ├── services/        # API request utility scripts (api.js)
+│   │   ├── store/           # Central reactive state storage (sessionStore.js)
+│   │   ├── pages/           # Dedicated JS modules representing Vue views/pages
+│   │   ├── router.js        # Vue Router page navigation mappings
+│   │   └── app.js           # Root Vue component initialization & mounting
+│   └── templates/
+│       └── index.html       # HTML Entry point serving CDNs and templates
+├── requirements.txt         # Project python dependencies
+└── README.md                # Project documentation
 ```
 
 ---
@@ -141,17 +140,16 @@ Main tables include:
 - Placement Drives
 - Applications
 
-The relationships between these tables are managed using SQLAlchemy.
+The relationships between these tables are managed using raw SQL queries and SQLite foreign key constraints.
 
 ---
 
 ## Installation
 
-### Clone the repository
+### Extract and navigate to the folder
 
 ```bash
-git clone <repository-url>
-cd placement-portal
+cd ppa
 ```
 
 ### Create a virtual environment
@@ -188,8 +186,15 @@ redis-server
 
 ### Start Celery
 
+**Windows PowerShell**:
+```powershell
+$env:PYTHONPATH="backend"
+celery -A backend.celery_config.celery_app worker --loglevel=info -P solo
+```
+
+**Linux/macOS**:
 ```bash
-celery -A backend.celery_config.celery worker --loglevel=info
+PYTHONPATH=backend celery -A backend.celery_config.celery_app worker --loglevel=info
 ```
 
 ### Run the application
@@ -210,13 +215,10 @@ http://localhost:5000
 
 Some features that can be added in the future include:
 
-- Resume upload and parsing
-- Interview scheduling
-- Notifications inside the application
-- Analytics dashboard with charts
-- Search and filtering
-- Pagination for large datasets
-- Role-based permission improvements
+- Automated resume parsing and ATS matching
+- In-app notification feed (bell icon alerts)
+- Interactive graphical charts (e.g. using ChartJS) for placement statistics
+- Pagination for large datasets in admin tables
 
 ---
 
@@ -226,7 +228,7 @@ While developing this project, I worked with:
 
 - Flask API development
 - Vue.js frontend development
-- SQLAlchemy ORM
+- SQLite & raw SQL database management
 - Database relationships
 - Redis caching
 - Celery background tasks
