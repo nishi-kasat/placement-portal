@@ -17,10 +17,10 @@ window.routes = [
   { path: '/company/drives', component: window.CompanyDrivesPage, meta: { role: 'company' } },
   { path: '/company/applications', component: window.CompanyApplicationsPage, meta: { role: 'company' } },
 
-//   { path: '/student', component: window.StudentDashboardPage, meta: { role: 'student' } },
-//   { path: '/student/profile', component: window.StudentProfilePage, meta: { role: 'student' } },
-//   { path: '/student/drives', component: window.StudentDrivesPage, meta: { role: 'student' } },
-//   { path: '/student/applications', component: window.StudentApplicationsPage, meta: { role: 'student' } },
+  { path: '/student', component: window.StudentDashboardPage, meta: { role: 'student' } },
+  { path: '/student/profile', component: window.StudentProfilePage, meta: { role: 'student' } },
+  { path: '/student/drives', component: window.StudentDrivesPage, meta: { role: 'student' } },
+  { path: '/student/applications', component: window.StudentApplicationsPage, meta: { role: 'student' } },
 
   { path: '/:pathMatch(.*)*', component: window.NotFoundPage },
 ];
